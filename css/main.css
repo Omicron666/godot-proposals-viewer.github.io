@@ -1,0 +1,75 @@
+:root {
+  --background-color: hsl(0, 0%, 100%);
+  --text-color: hsl(0, 0%, 25%);
+  --green: hsl(130, 45%, 30%);
+  --red: hsl(5, 50%, 35%);
+  --gray: hsl(0, 0%, 50%);
+  --link-color: hsl(210, 90%, 50%);
+  --link-underline-color: hsla(210, 90%, 50%, 0.3);
+  --new-color: hsl(15, 90%, 50%);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: hsl(180, 5%, 15%);
+    --text-color: hsl(0, 0%, 80%);
+    --green: hsl(130, 40%, 50%);
+    --red: hsl(5, 50%, 55%);
+    --gray: hsl(0, 0%, 55%);
+    --link-color: hsl(200, 50%, 60%);
+    --link-underline-color: hsla(200, 50%, 60%, 0.3);
+    --new-color: hsl(15, 70%, 60%);
+  }
+}
+
+*:focus {
+  /* More visible outline for better keyboard navigation. */
+  outline: 0.125rem solid hsl(220, 100%, 62.5%);
+  /* Make the outline always appear above other elements. */
+  /* Otherwise, one of its sides can be hidden by tabs in the Download and More layouts. */
+  position: relative;
+}
+
+html {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+body {
+  max-width: 1200px;
+  margin: 0 auto 2rem;
+  padding: 0 0.5rem;
+  /* Use a modern font stack inspired by Bootstrap 4. */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  line-height: 1.6;
+}
+
+thead {
+  font-weight: bold;
+}
+
+tr:hover {
+  background-color: hsla(0, 0%, 50%, 0.075);
+}
+
+tr:nth-child(even) {
+  background-color: hsla(0, 0%, 50%, 0.1);
+}
+
+tr:nth-child(even):hover {
+  background-color: hsla(0, 0%, 50%, 0.175);
+}
+
+a {
+  color: var(--link-color);
+  text-decoration-color: var(--link-underline-color);
+  text-decoration-thickness: 0.125rem;
+}
+
+a:hover {
+  filter: brightness(117.5%);
+}
+
+a:active {
+  filter: brightness(82.5%);
+}
